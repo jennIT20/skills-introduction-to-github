@@ -1,0 +1,141 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOmkV3p9Kl5kG8P11/lITrE",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jennIT20/skills-introduction-to-github/blob/main/Relational%20Data%20Structures%20ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "lshTiputLm9v"
+      },
+      "outputs": [],
+      "source": [
+        "# Student\n",
+        "s1 = {' id' : 1, 'name' : 'Alice' }\n",
+        "s2 = {' id' : 2, 'name' : 'Bob' }\n",
+        "s3 = {' id' : 3, 'name' : ' Charles' }\n",
+        "student = {'students' : [s1, s2, s3]}\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Psets\n",
+        "p1 = {'id' :1, 'maxScore' :100}\n",
+        "p2 = {'id': 2, 'maxScore' : 80}\n",
+        "p3 = {'id': 3, 'maxScore' : 120}\n",
+        "psets = {'psets' : [p1,p2, p3]}"
+      ],
+      "metadata": {
+        "id": "ZLKqFWuILzsX"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define individual grade entries\n",
+        "g1 = {'sid': 1, 'pid': 1, 'score': 90}\n",
+        "g2 = {'sid': 2, 'pid': 2, 'score': 90}\n",
+        "g3 = {'sid': 3, 'pid': 3, 'score': 90}\n",
+        "\n",
+        "# Store the list of grades in a dictionary\n",
+        "grades = {'grades': [g1, g2, g3]}\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "TxG9yJP5L1vk"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def empty():\n",
+        "    return {\n",
+        "        'student': [],\n",
+        "        'psets': [],\n",
+        "        'grades': []\n",
+        "    }\n",
+        "\n",
+        "db = empty()\n"
+      ],
+      "metadata": {
+        "id": "PB2vLAVuMCMb"
+      },
+      "execution_count": 11,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def add_student(db, student_id, student_name):\n",
+        "    # Ensure the 'students' key exists in the database\n",
+        "    if 'students' not in db:\n",
+        "        db['students'] = []\n",
+        "\n",
+        "    # Append the new student to the 'students' list\n",
+        "    db['students'].append({'id': student_id, 'name': student_name})\n",
+        "\n",
+        "# Initialize the database dictionary\n",
+        "db = {\n",
+        "    'students': [],\n",
+        "    'psets': [],\n",
+        "    'grades': []\n",
+        "}\n",
+        "\n",
+        "# Add students to the database\n",
+        "add_student(db, 1, 'Alice')\n",
+        "add_student(db, 2, 'Bob')\n",
+        "add_student(db, 3, 'Charles')\n",
+        "\n",
+        "# Output the updated database\n",
+        "print(db)\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vu160C92MHPV",
+        "outputId": "af72ddd0-c3fe-4f70-ae66-cde62f6937d5"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'students': [{'id': 1, 'name': 'Alice'}, {'id': 2, 'name': 'Bob'}, {'id': 3, 'name': 'Charles'}], 'psets': [], 'grades': []}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
